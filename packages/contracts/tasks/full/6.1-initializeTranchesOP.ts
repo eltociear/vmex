@@ -67,6 +67,8 @@ task(
       await waitForTx(
         await lendingPoolConfiguratorProxy.connect(admin).setTranchePause(true, 0)
       );
+      
+      // TODO: use real data for tranches that we want to deploy
 
       let [assets0, reserveFactors0, canBorrow0, canBeCollateral0] = getTranche0MockedDataOP(reserveAssets);
       await initReservesByHelper(
